@@ -1,0 +1,6 @@
+library(raster)
+library(watershed)
+outlet = c(4944712, 2307812)
+dem = raster("data/dem.tif")
+stream = delineate(dem, threshold = 1e6, outlet = outlet, reach_len = 2500)
+writeRaster(stream, file="output/neretva.grd", overwrite = TRUE, gdal=c("COMPRESS=DEFLATE"))
