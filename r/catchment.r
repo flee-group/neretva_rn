@@ -14,5 +14,5 @@ for(r in reaches) {
 	dn = sum(!is.na(pts$ca))
 	cat(paste0(Sys.time(), "  ", dn, "/", nr, " (", round(100 * dn/nr, 0), "%)", "\r"))
 }
-ca = with(pts, rasterFromXYZ(x, y, ca))
+ca = rasterFromXYZ(pts[, c('x', 'y', 'ca')])
 writeRaster(ca, "output/catchment.tif", overwrite = TRUE, gdal=c("COMPRESS=DEFLATE"))
