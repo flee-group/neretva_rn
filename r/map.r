@@ -17,7 +17,7 @@ hs = shade(sl, as)
 ptcol = "#ffcc66"
 rivcol = "#0099ff"
 
-jpeg(width=2000, height = 900, file = "output/neretva.jpg")
+jpeg(width=2000, height = 2000, file = "output/neretva.jpg")
 ## catch a weird R-internal error that pops up sometimes
 tryCatch(
 	plot(hs, col=grey(0:100/100), alpha = 1, legend = FALSE, axes = FALSE),
